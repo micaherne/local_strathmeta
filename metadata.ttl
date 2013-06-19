@@ -1,0 +1,49 @@
+@base <http://data.strath.ac.uk/id/>.
+@prefix ns: <http://data.strath.ac.uk/ns/>.
+@prefix rel: <http://data.strath.ac.uk/ns/relation#>.
+@prefix mprel: <http://data.strath.ac.uk/ns/myplace/relation#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<person/616021> a foaf:Person;
+    rdfs:label "Michael Aherne";
+    foaf:familyName "Aherne";
+    foaf:givenName "Michael";
+    foaf:mbox "michael.aherne@strath.ac.uk";
+    rel:person-code "616021";
+    ns:dsAccount <ds-account/vas07101>.
+
+<curriculum/class-code/BB101> a <ns/pegasus#class-code>;
+    rdfs:label "BB101";
+    dc:identifier "BB101".
+    
+<curriculum/class-code/BB102> a <ns/pegasus#class-code>;
+    rdfs:label "BB102";
+    dc:identifier "BB102".
+    
+<academic-session/ACAD12-13> a <ns/pegasus#session-code>;
+    rdfs:label "Academic Session 2012-2013";
+    dc:identifier "ACAD12-13".
+    
+# <curriculum/unit-instance/BB101-1-1> a <ns/pegasus#unit-instance>;
+#    rdfs:label "The Power of Independent Trucking";
+#    rel:class-code <curriculum/class-code/BB101>.
+    
+<curriculum/uio/234567> a <ns/pegasus#uio>;
+    rdfs:label "The Power of Independent Trucking";
+    rel:class-code <curriculum/class-code/BB101>;
+    rel:academic-session <academic-session/ACAD12-13>;
+    rel:cohort <curriculum/uio/234567/students>.
+    
+<myplace/2012-13/site/234> a <ns/myplace#site>;
+    rdfs:label "Some Myplace Course 12/13";
+    rel:class-code <curriculum/class-code/BB101>;
+    rel:class-code <curriculum/class-code/BB102>;
+    mprel:rollover-type <ns/myplace#rollover-standard>;
+    rel:academic-session <academic-session/ACAD12-13>.
+    
+<curriculum/uio/234567/students> a <ns/pegasus#cohort>;
+    rdfs:label "BB101 students 2012/13";
+    rdfs:seeAlso <http://pegasus.strath.ac.uk/classlist?uio=234567>.
+    
